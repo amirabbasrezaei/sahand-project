@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { FavoriteCardType } from "./Favorite";
-import { LocationIcon, ShareIcon, StarIcon } from "./svgs";
+import { LocationIcon, ShareIcon, StarIcon } from "../svgs";
 type Props = {
   favorite: FavoriteCardType;
 };
@@ -11,7 +11,7 @@ const FavoriteCard = ({ favorite }: Props) => {
     <View  className="h-fit w-full bg-white  rounded-[26px] p-4 mb-4 border border-gray-200">
       <Image
         className="w-full h-[150] rounded-[26px]"
-        source={require("../assets/Images/33060654.jpg")}
+        source={require("../../assets/Images/33060654.jpg")}
       />
       <Text className="font-bold text-lg mt-3">{favorite.name}</Text>
       <View className="flex flex-row mt-2">
