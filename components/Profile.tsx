@@ -1,7 +1,8 @@
 import { View, Text, ScrollView, Image, Dimensions } from "react-native";
 import React from "react";
 import Favorite from "./Favorite";
-
+import InsetShadow from "react-native-inset-shadow";
+import { LinearGradient } from "expo-linear-gradient";
 
 type Props = {};
 
@@ -32,9 +33,10 @@ const Profile = (props: Props) => {
             <Text className="text-white ">Friend</Text>
           </View>
         </View>
-
       </View>
       <Favorite />
+      <LinearGradient className="h-[130]  w-full bg-transparent absolute bottom-0 " colors={["transparent", "rgb(240, 240, 240)"]}   />
+
     </View>
   );
 };

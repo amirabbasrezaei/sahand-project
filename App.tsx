@@ -1,9 +1,10 @@
 import classNames from "classnames";
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Platform, StatusBar, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Platform, StatusBar, SafeAreaView, Dimensions } from "react-native";
 import Home from "./screens/Home";
 
 export default function App() {
+
 
   return (
     <>
