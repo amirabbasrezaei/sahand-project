@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, Dimensions, StatusBar } from "react-native";
 import React from "react";
 import FavoriteCard from "./FavoriteCard";
+import { MotiView } from "moti";
 
 type Props = {};
 
@@ -33,6 +34,7 @@ const favorites = [
 ];
 
 const Favorite = (props: Props) => {
+  const { width } = Dimensions.get("window");
   const statusBarHeight = StatusBar?.currentHeight
     ? StatusBar.currentHeight
     : 0;
@@ -41,13 +43,20 @@ const Favorite = (props: Props) => {
     Dimensions.get("screen").height - (windowHeight + statusBarHeight);
 
   return (
-    <View className="rounded-t-[26px]  bg-gray-100 flex-grow ">
+    <MotiView
+      style={{ width }}
+      from={{ translateX: width, opacity: 0 }}
+      animate={{ translateX: 0, opacity: 1 }}
+      exit={{ translateX: width, opacity: 0 }}
+      transition={{ duration: 200, type: "timing", delay: 0 }}
+      className="rounded-t-[26px]   flex-grow "
+    >
       <ScrollView className="flex-grow w-full px-4 pt-4  rounded-t-[26px] mb-10">
         {favorites.map((favorite, index) => (
           <FavoriteCard key={index} favorite={favorite} />
         ))}
       </ScrollView>
-    </View>
+    </MotiView>
   );
 };
 

@@ -8,8 +8,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   return (
-    <View className='flex-1 bg-black'>
-      <TopBar height={80} />
+    <View className='flex-1 bg-black '>
       <Profile />
     </View>
   )
